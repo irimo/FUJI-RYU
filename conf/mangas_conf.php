@@ -17,5 +17,6 @@ $mangas_arr = array(
 "waqwaq" => "Waqwaq",
 "tenkyuugi" => "天球儀",
 "guripan" => "共生魔神ぐりりんパンチャー",
-"shiki" => "屍鬼"
+"shiki" => "屍鬼",
+"ginga" => "銀河英雄伝説"
 );

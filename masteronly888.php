@@ -8,7 +8,7 @@ echo "your addr:".$_SERVER["REMOTE_ADDR"] .": ALLOW_ADDR:219.121.160.148";
 if(isset($_POST["mode"]))
 {
 	$mode = $_POST["mode"];
-} 
+}
 else
 {
 	$mode = "";
@@ -21,7 +21,7 @@ if($mode != "")
 	{
 		die("FORBID UPADTE");
 	}
-	
+
 	if(isset($_POST["siteid"]))
 	{
 		$id = $_POST["siteid"];
@@ -30,8 +30,8 @@ if($mode != "")
 	{
 		die("NO SITEID");
 	}
-	
-	
+
+	/*
 	if($mode == "join")
 	{
 		$ret = $dbm->setCheckFlag($id);
@@ -46,8 +46,8 @@ if($mode != "")
 	}
 	elseif($mode == "recover")
 	{
-		$ret = $dbm->setDelFlag($id,0);		
-	}
+		$ret = $dbm->setDelFlag($id,0);
+	}*/
 }
 $ret = $dbm->getSiteDataAll_master();
 $smarty->assign("data", $ret);
