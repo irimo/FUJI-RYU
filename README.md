@@ -1,0 +1,2 @@
+# FUJI-RYU
+いにしえの Webring
