@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ja">
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<body>
+<table border=1>
+<tr>
+<td>id</td>
+<td>sitename<br>banner<br>url</td>
+<td>master<br>mail</td>
+<td>secret_q<br>secret_a</td>
+<td>pw</td>
+<td>in/out</td>
+<td>del_flag</td>
+<td>check_flag</td>
+<td>join</td>
+<td>del</td>
+<td>recover</td>
+<td>kari</td>
+</tr>
+{foreach from=$data key="i" item="value" name="master_list"}
+<tr>
+
+<td>{$value.id}</td>
+<td>{$value.sitename}<br>
+img:{$value.explain}<br>
+url:{$value.url}</td>
+<td>{$value.master}<br>
+{$value.mail}
+</td>
+<td>{$value.secret_q}<br>
+{$value.secret_a}</td>
+<td>{$value.pw}</td>
+<td>in:{$value.in}/out:{$value.out}</td>
+<td>{$value.del_flag}</td>
+<td>{$value.check_flag}</td>
+<td>
+<form method="POST" action="./masteronly888.php">
+<input type="hidden" name="mode" value="join">
+<input type="hidden" name="siteid" value="{$value.id}">
+<input type="submit" value="kari→Join">
+</form>
+</td>
+<td>
+<form method="POST" action="./masteronly888.php">
+<input type="hidden" name="mode" value="delete">
+<input type="hidden" name="siteid" value="{$value.id}">
+<input type="submit" value="Delete">
+</form>
+</td>
+<td>
+<form method="POST" action="./masteronly888.php">
+<input type="hidden" name="mode" value="recover">
+<input type="hidden" name="siteid" value="{$value.id}">
+<input type="submit" value="del→alive">
+</form>
+</td>
+<td>
+<form method="POST" action="./masteronly888.php">
+<input type="hidden" name="mode" value="kari">
+<input type="hidden" name="siteid" value="{$value.id}">
+<input type="submit" value="alive→kari">
+</form>
+</td>
+</tr>
+{/foreach}
+</table>
+</body>
+</html>

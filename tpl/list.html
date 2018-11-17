@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ja">
+<head>
+<title>
+○藤竜輪（リング）サイトリスト○
+</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<body bgcolor="#ffffff" text="#333333" link="#333333" alink="#666666" vlink="#666666">
+<font size=5>○藤竜<RUBY><RB>輪</RB><RP>（</RP><RT>リング</RT><RP>）</RP></RUBY>○</font><br>
+<br>
+{if $mode=="search"}
+○　検索結果一覧です　○<br>
+<br>
+検索語句：{$words}
+{else}
+○　登録サイト一覧です　○
+{/if}
+<br>
+<br>
+
+<table border=1>
+{foreach from=$data key="i" item="value" name="list"}
+<tr>
+<td rowspan=2>id:{$value.id}</td>
+<td><a href="./goto.php?url={$value.url}">{$value.sitename}<br>
+<img src="{$value.banner}" alt="{$value.sitename}"></a></td>
+<td>{$value.master}<font size=1>さん</font></td>
+<td>in : {$value.in} hit</td>
+<td>out : {$value.out} hit</td>
+</tr>
+<tr>
+<td colspan=2>{$value.explain}</td>
+<td colspan=2>
+<font size=1>取り扱い藤竜作品:<br>
+{foreach from=$value.mangas key="j" item="title" name="mangas"}
+{$title}
+{/foreach}
+</font>
+</td>
+</tr>
+{foreachelse}
+<td>登録サイトはありません。</td>
+{/foreach}
+</table>
+<br>
+<br>
+<p align=right><a href="top.html">戻る</a></p>
+</body></html>

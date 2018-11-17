@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ja">
+<head>
+<title>
+○藤竜輪（リング）登録内容修正フォーム○
+</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<body bgcolor="#ffffff" text="#333333" link="#333333" alink="#666666" vlink="#666666">
+<font size=5>○藤竜<RUBY><RB>輪</RB><RP>（</RP><RT>リング</RT><RP>）</RP></RUBY>○</font><br>
+
+<br>
+○　登録内容修正フォーム　○<br>
+<br>
+<form action="./join.php" method="POST">
+<input type="hidden" name="mode" value="edit">
+<input type="hidden" name="id" value="{$id}">
+<table>
+<tr><td>サイト名</td><td>:</td><td><input type="text" name="sitename" size="40" value="{$data.sitename}"></td></tr>
+<tr><td>サイトURL</td><td>:</td><td><input type="text" name="url" size="60" value="{$data.url}"></td></tr>
+<tr><td>バナーURL(任意)</td><td>:</td><td><input type="text" name="banner" size="60" value="{$data.banner}"></td></tr>
+<tr><td>管理人</td><td>:</td><td><input type="text" name="master" size="60" value="{$data.master}"></td></tr>
+<tr><td>サイトの説明</td><td>:</td><td><textarea name="explain" cols="40" rows="4">{$data.explain}</textarea></td></tr>
+<tr><td>秘密の質問<br><font size=1>(パスワードを忘れたときのために)</font></td><td>:</td><td><input type="text" name="secret_q" size="60" value="{$data.secret_q}"></td></tr>
+<tr><td>秘密の質問の答え</td><td>:</td><td><input type="text" name="secret_a" size="60" value="{$data.secret_a}"></td></tr>
+<tr><td>メールアドレス</td><td>:</td><td><input type="text" name="mail" size="60" value="{$data.mail}"></td></tr>
+<tr><td>パスワード</td><td>:</td><td><input type="text" name="pw" value="{$data.pw}"></td></tr>
+<tr><td valign=top>フジリュー取り扱い作品</td><td valign=top>:</td><td>
+{foreach from=$data.manga key="id" item="val" name="manga"}
+<label name="{$id}"><input type="checkbox" name="{$id}" {if $val.val == 1}checked="checked"{/if} value="1">{$val.str}</label><br>
+{/foreach}
+<br>
+</table>
+<input type="submit" value="この内容で修正">
+</form>
+<form action="./join.php" method="POST">
+<input type="hidden" name="mode" value="delete">
+<input type="hidden" name="id" value="{$siteid}">
+<input type="submit" value="サイト登録を削除">
+</form>
+<br>
+<br>
+<p align=right><a href="top.html">戻る</a></p>
+</body></html>

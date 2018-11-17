@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ja">
+<head>
+<title>
+○藤竜輪（リング）サイト検索○
+</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<body bgcolor="#ffffff" text="#333333" link="#333333" alink="#666666" vlink="#666666">
+<font size=5>○藤竜<RUBY><RB>輪</RB><RP>（</RP><RT>リング</RT><RP>）</RP></RUBY>○</font><br>
+
+<br>
+○　登録サイトの検索ができます　○<br>
+<br>
+<hr>
+<form action="./search.php" method="GET">
+<input type="hidden" name="mode" value="search_explain">
+○　キーワード検索　○<br>
+<br>
+<input type="text" name="word" size="60"><br>
+<font size="1">AND検索はスペースで区切ってください。</font>
+<br>
+<input type="submit" value="検索">
+</form>
+<hr>
+<form action="./search.php" method="GET">
+<input type="hidden" name="mode" value="search_mangas">
+○　取扱作品から検索　○<br>
+<br>
+{foreach from=$mangas_arr key="i" item="name" name="mangas"}
+<label name="{$i}"><input type="checkbox" name="{$i}">{$name}</label><br>
+{/foreach}
+<font size="1">複数選択可能です。</font><br>
+<input type="submit" value="検索">
+</form>
+<br>
+<br>
+<p align=right><a href="top.html">戻る</a></p>
+</body></html>
